@@ -6,6 +6,9 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour {
 	public float intervalTime = 2f;
 
+	void Start() {
+	}
+
 	void OnEnable () {
 		SceneManager.sceneLoaded += OnSceneLoaded;
 	}

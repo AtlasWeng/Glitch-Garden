@@ -13,6 +13,16 @@ public class MusicManager : MonoBehaviour {
 		_audio = GetComponent<AudioSource>()	;
 	}
 
+	void Start () {
+		_audio.volume = PlayerPrefsManager.GetMasterVolume();
+	}
+
+	public void ChangeVolume (float volume)
+	{
+		_audio.volume = volume;
+		PlayerPrefsManager.SetMasterVolume(volume);
+	}
+
 	void OnEnable ()
 	{
 		SceneManager.sceneLoaded += OnSceneLoaded;
